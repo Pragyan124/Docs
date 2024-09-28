@@ -20,6 +20,10 @@ export const signInWithGoogle = (handleLogin, setUser) => {
   signInWithPopup(auth, provider)
     .then((result) => {
         const user = result.user;
+        const userProfilePicture = result.user.photoURL;
+
+        localStorage.setItem("userProfilePicture", userProfilePicture)
+        
         console.log("User object:", user); // Get the signed-in user
         setUser(user); // Set the user using the passed function
         handleLogin(); // Call handleLogin after setting user

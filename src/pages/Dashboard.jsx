@@ -28,18 +28,10 @@ function Dashboard() {
 
         <SiGoogledocs className='h-10 w-10 text-pink-500 mb-2 m-2' />
 
-        {/* {user && (
-          <img
-            src={user.photoURL} // Use user's photo URL
-            width={50}
-            height={50}
-            className='fixed h-[50px] w-[50px] rounded-full top-2 right-2 mb-2 cursor-pointer object-contain'
-            alt="User Profile"
-          />
-        )} */}
+      
 
           <img
-            src="https://lh3.googleusercontent.com/a/ACg8ocK3bk0h12rpB0TAwLfWSkwcjM0YT09m3KYSLLt2FMXwm3zz8WT_=s96-c"
+            src={localStorage.getItem("userProfilePicture")}
             width={50}
             height={50}
             className='fixed h-[50px] w-[50px] rounded-full top-2 right-2 mb-2 cursor-pointer object-contain'
