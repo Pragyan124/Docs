@@ -59,7 +59,7 @@ function Editor() {
 
 
     <button 
-    className= ' bg-blue-200 p-2 font-semibold text-sm rounded-full px-4 flex flex-row fixed top-[75px] right-10 m-2 '>Editng <GoPencil className='mt-1 ml-2'/></button>
+    className= 'bg-blue-200 p-2 font-semibold text-sm rounded-full px-4 flex flex-row fixed top-[75px] right-10 m-2 '>Editng <GoPencil className='mt-1 ml-2'/></button>
     </div>
       
 
