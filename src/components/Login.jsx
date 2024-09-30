@@ -5,13 +5,12 @@ import { useState } from "react";
 
 function Login({onLogin}) {
     const [loading, setLoading] = useState(false);
-    const [user, setUser] = useState(null);
-
+    
     const handleGoogleSignIn = () => {
       setLoading(true);
-      signInWithGoogle(onLogin, setUser) // Pass both onLogin and setUser
+      signInWithGoogle(onLogin) 
           .then(() => {
-              // No additional handling needed here since setUser is done in signInWithGoogle
+              console.log("Login Successfull")
           })
           .catch((error) => {
               console.error("Sign in error:", error);

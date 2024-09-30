@@ -3,11 +3,19 @@ import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import { SiGoogledocs } from "react-icons/si";
 import { signInWithGoogle } from '../Firebase';
+import { TbRefreshDot } from "react-icons/tb";
+import { MdInsertComment } from "react-icons/md";
+import { IoVideocam } from "react-icons/io5";
+import { CiLock } from "react-icons/ci";
+import EditorHeader from '../components/EditorHeader';
+import { GoPencil } from "react-icons/go";
+
+
 
 function Editor() {
 
   const [value, setValue] = useState('');
-  const [user, setUser] = useState(null);
+
 
   const toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
@@ -34,52 +42,31 @@ function Editor() {
     toolbar: toolbarOptions
   }
   return (
-    <section>
+    <section >
 
-      <div className='flex flex-row bg-gray-200 p-2  mb-2'>
+     
 
-        <SiGoogledocs className='h-10 w-10 text-pink-500 mb-2 m-2' />
+    <EditorHeader />
 
-        <div className='flex flex-col'>
-          <h1 className='text-lg '>Document</h1>
-          <div className='space-x-4 p-0 '>
+      
 
 
-            <button className='hover:bg-gray-300 rounded-lg px-1 focus:outline-none'>File</button>
-            <button className='hover:bg-gray-300 rounded-lg px-1 focus:outline-none'>Edit</button>
-            <button className='hover:bg-gray-300 rounded-lg px-1 focus:outline-none'>View</button>
-            <button className='hover:bg-gray-300 rounded-lg px-1 focus:outline-none'>Insert</button>
-            <button className='hover:bg-gray-300 rounded-lg px-1 focus:outline-none'>Format</button>
-            <button className='hover:bg-gray-300 rounded-lg px-1 focus:outline-none'>Tools</button>
-            <button className='hover:bg-gray-300 rounded-lg px-1 focus:outline-none'>Extensions</button>
-            <button className='hover:bg-gray-300 rounded-lg px-1 focus:outline-none'>Help</button>
-          </div>
-
-        </div>
-
-
-
-
-        
-       
-
-            <img
-            src={localStorage.getItem("userProfilePicture")}
-            width={50}
-            height={50}
-            className='fixed h-[50px] w-[50px] rounded-full top-2 right-2 mb-2 cursor-pointer object-contain'
-            alt="User Profile"
-          />
-
-      </div>
-
-
-
-
-      <ReactQuill className='container flex flex-col justify-center items-center '
+    <div className='flex flex-row space-x-2 '>
+    <ReactQuill className='absolute container flex flex-col justify-center items-center  '
         modules={module}
-        theme="snow" value={value} onChange={setValue} />
+        theme="snow" value={value} onChange={setValue} /> 
+      
+
+
+    <button 
+    className= ' bg-blue-200 p-2 font-semibold text-sm rounded-full px-4 flex flex-row fixed top-[75px] right-10 m-2 '>Editng <GoPencil className='mt-1 ml-2'/></button>
+    </div>
+      
+
+      
     </section>
+
+    
 
 
 

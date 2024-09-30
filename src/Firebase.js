@@ -16,7 +16,7 @@ export const auth = getAuth(app);
 
 const provider = new GoogleAuthProvider();
 
-export const signInWithGoogle = (handleLogin, setUser) => {
+export const signInWithGoogle = (handleLogin) => {
   signInWithPopup(auth, provider)
     .then((result) => {
         const user = result.user;
@@ -24,9 +24,9 @@ export const signInWithGoogle = (handleLogin, setUser) => {
 
         localStorage.setItem("userProfilePicture", userProfilePicture)
         
-        console.log("User object:", user); // Get the signed-in user
-        setUser(user); // Set the user using the passed function
-        handleLogin(); // Call handleLogin after setting user
+        console.log("User object:", user); 
+        
+        handleLogin(); 
     })
     .catch((error) => {
       console.log("Sign-in error:", error);
